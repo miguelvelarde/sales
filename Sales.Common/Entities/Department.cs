@@ -1,22 +1,19 @@
 ﻿namespace Sales.Common.Entities
 {
-    using System.Collections;
     using System.Collections.Generic;
     using System.ComponentModel;
     using System.ComponentModel.DataAnnotations;
-
-    public class Country
+    
+    public class Department
     {
         public int Id { get; set; }
 
         [MaxLength(50)]
-        [Required]
         public string Name { get; set; }
 
-        public ICollection<Department> Departments { get; set; }
+        public ICollection <City> Cities { get; set; }
 
-        [DisplayName("Departments Count")]
-        public int DepartmentsCount => Departments == null ? 0 : Departments.Count;
-
+        [DisplayName("Cities Count")]
+        public int CitiesCount => Cities == null ? 0 : Cities.Count;
     }
 }
